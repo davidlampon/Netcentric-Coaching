@@ -5,7 +5,7 @@ Coaching process to promote to intermediate engineer at __Netcentric__ conducted
   * How to setup a project on [Github] (https://github.com/davidlampon/coaching).
   * How to setup the [HTML5 Boilerplate] (https://html5boilerplate.com/).
   * How to setup the project folder structure.
-  * How to develop plain html and css without preprocessors from a [psd design] (http://www.invisionapp.com/do) for the todo app.
+  * How to develop plain html and css without preprocessors from the [Do psd design] (http://www.invisionapp.com/do) for the todo app.
   
   Target (2 weeks):
   > Implement html pages on plain html5 and css3 using HTML5 Bolierplate as base template that will become the different views of the MVC todo list application using Github as a repository.
