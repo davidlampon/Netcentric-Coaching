@@ -1,5 +1,5 @@
 # coaching
-Coaching process to promote to intermediate engineer at __Netcentric__
+Coaching process to promote to intermediate engineer at __Netcentric__ conducted by [Erik Grijzen](https://github.com/ErikGrijzen)
 
 1. __Improve project setup knowledge__
   * How to setup a project on [Github] (https://github.com/davidlampon/coaching).
