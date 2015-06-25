@@ -33,7 +33,7 @@ Coaching process to promote to intermediate engineer at __Netcentric__
   * How to manage all the dependencies of the project with [Bower] (http://bower.io/) and [NPM] (https://www.npmjs.com/).
   * How to use routing to change the view.
   * How to setup a REST service for the SPA to use ([NodeJS] (https://nodejs.org/) + [Express] (http://expressjs.com/) + [MongoDB] (https://www.mongodb.org/)).
-  * How to get the application data via REST, making CRUD actions (GET, POST, PUT and DELETE).
+  * How to get the application data via REST (GET, POST, PUT and DELETE).
 
  Target (6 weeks):
   > Create form scratch a todo app using the Backbone and Marionette framework and consume data from a REST API developed in Node.js
