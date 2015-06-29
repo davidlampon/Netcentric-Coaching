@@ -1,14 +1,17 @@
 # coaching
 Coaching process to promote to intermediate engineer at __Netcentric__ conducted by [Erik Grijzen](https://github.com/ErikGrijzen)
 
+__Introduction:__
+TODO
+
 1. __Improve project setup knowledge__
   * How to setup a project on [Github] (https://github.com/davidlampon/coaching).
   * How to setup the [HTML5 Boilerplate] (https://html5boilerplate.com/).
   * How to setup the project folder structure.
   * How to develop plain html and css without preprocessors from the [Do] (http://www.invisionapp.com/do) psd design for the todo app.
   
-  Target (2 weeks):
-  > Implement html pages on plain html5 and css3 using HTML5 Bolierplate as base template that will become the different views of the MVC todo list application using Github as a repository.
+  Target:
+  > Implement html pages in plain html5 and css3 using HTML5 Boilerplate as base template that will become the different views of the MVC todo list application using Github as a repository. My coach will review that all the topics are correctly implemented and checked as completed.
 
 2. __Improve automation build knowledge__
 
@@ -22,11 +25,11 @@ Coaching process to promote to intermediate engineer at __Netcentric__ conducted
     * Development and production build.
     * CSS pre processor compilation, exploring SASS competitors as [PostCSS] (https://github.com/postcss/postcss) and [LibSass] (http://libsass.org/).
     * Minification and concatenation.
-    * SVG icons and image compressions. 
+    * Icons creation and image compressions. 
     * Testing with [Jasmine] (http://jasmine.github.io/) and [Karma] (http://karma-runner.github.io/0.12/index.html).
     
-  Target (3 weeks):
-  > Develop a fast and estable building process which automates the whole process of releasing a production build of the application.
+  Target:
+  > Develop a fast and stable build process which automates the necessary steps to release the application in a production environment. My coach will review that all the topics are correctly implemented and checked as completed.
 
 3. __Improve client application architecture knowledge__
   * How to create a simple single page MVC todo list application with [Backbone] (http://backbonejs.org/) and [Marionette] (http://marionettejs.com/).
@@ -35,5 +38,5 @@ Coaching process to promote to intermediate engineer at __Netcentric__ conducted
   * How to setup a REST service for the SPA to use ([NodeJS] (https://nodejs.org/) + [Express] (http://expressjs.com/) + [MongoDB] (https://www.mongodb.org/)).
   * How to get the application data via REST (GET, POST, PUT and DELETE).
 
- Target (6 weeks):
-  > Create form scratch a todo app using the Backbone and Marionette framework and consume data from a REST API developed in Node.js
+ Target:
+  > Create a todo list application from scratch using the Backbone and Marionette framework, that will be able to do all CRUD actions. This application has to be a SPA and change its views using routing without refreshing the page. It will retrieve all its data using AJAX that is connected to a REST API. A simple backend setup will be created with NodeJS + ExpressJS + MongoDB. My coach will review that all the topics are correctly implemented and checked as completed.
