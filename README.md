@@ -1,8 +1,9 @@
 # coaching
 Coaching process to promote to intermediate engineer at __Netcentric__ conducted by [Erik Grijzen](https://github.com/ErikGrijzen)
 
-__Introduction:__
-TODO
+This coaching process will allow me to focus on understanding by doing the very foundations of the front-end development process without the limitations of an specific backend system. The final goal is to build from scratch a todo list application using state of the art frameworks and techonolgies with a building process to automate all the steps to get the final release for the production environment. 
+
+The whole process is divided in three parts:
 
 1. __Improve project setup knowledge__
   * How to setup a project on [Github] (https://github.com/davidlampon/coaching).
