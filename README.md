@@ -18,8 +18,7 @@ The whole process is divided in three parts:
 
   a. How to improve the working process.
     * Improvements in terminal messaging and readability.
-    * Implementing static code analysis with [JSHint] (http://jshint.com/) or [JSLint] (http://www.jslint.com/).
-    * Implementing code style checking with [JSCS] (http://jscs.info/).
+    * Implementing static code and code style analysis with [ESLint] (http://eslint.org/) ([JSCS] (http://jscs.info/) + [JSHint] (http://jshint.com/)).
     * Live reload with [BrowserSync] (http://www.browsersync.io/).
     
   b. How to improve the application build process.
