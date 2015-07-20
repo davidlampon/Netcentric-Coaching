@@ -1,44 +1,53 @@
-var gulp = require('gulp'),
-    eslint = require('gulp-eslint'),
-    util = require('gulp-util'),
-    gulpprint = require('gulp-print'),
-    gulpif = require('gulp-if'),
-    args = require('yargs').argv;
+// npm packages
+var gulp = require('gulp');
+var args = require('yargs').argv;
+var autoprefixer = require('autoprefixer');
+var cssnext = require('cssnext');
+
+// configuration file (requiere and execute)
+var config = require('./gulp.config')();
+
+// plugin loader (gulp-eslint, gulp-util, gulp-print, gulp-if)
+var $ = require('gulp-load-plugins')({lazy: true});
 
 gulp.task('lint', function () {
   log('Analyzing source code with ESLint');
 
-  return gulp.src([
-      '*.js'
-      ])
-      .pipe(gulpif(args.verbose, gulpprint()))
-      //.pipe(gulpprint())
-      // eslint() attaches the lint output to the eslint property
-      // of the file object so it can be used by other modules.
-      .pipe(eslint())
-      // eslint.format() outputs the lint results to the console.
-      // Alternatively use eslint.formatEach() (see Docs).
-      .pipe(eslint.format())
-      // To have the process exit with an error code (1) on
-      // lint error, return the stream and pipe to failOnError last.
-      .pipe(eslint.failOnError());
+  return gulp
+    .src(config.alljs)
+    .pipe($.if(args.verbose, $.print()))
+    .pipe($.eslint())
+    .pipe($.eslint.format())
+    .pipe($.eslint.failOnError());
 });
 
-gulp.task('default', ['lint'], function () {
-    // This will only run if the lint task is successful...
+gulp.task('css', function () {
+  var processors = [
+    cssnext(),
+    autoprefixer({browsers: ['last 2 version']})
+  ];
+
+  log('Compiling styles with cssnext and postcss');
+
+  return gulp
+    .src(config.postcss)
+    // .pipe($.cssnext())
+    .pipe($.postcss(processors))                            // postcss + autoprefixor
+    // .pipe($.autoprefixer({browsers: ['last 2 version']}))   // gulp-autoprefixor
+    .pipe(gulp.dest(config.tmp));
 });
 
-//////// LOG FUNCTION ////////
+//////////
 
 function log (msg) {
   if(typeof(msg) === 'object') {
     for (var item in msg) {
       if(msg.hasOwnProperty(item)) {
-          util.log(util.colors.blue(msg[item]));
+        $.util.log($.util.colors.blue(msg[item]));
       }
     }
   }
   else {
-   util.log(util.colors.blue(msg));
- }
+    $.util.log($.util.colors.blue(msg));
+  }
 }

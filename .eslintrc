@@ -20,8 +20,8 @@
   },
 
   "env": {
-    "browser": false,
-    "node": false,
+    "browser": true,
+    "node": true,
     "amd": false,
     "mocha": false,
     "jasmine": false,
@@ -135,10 +135,10 @@
     "no-label-var": 0,
     "no-shadow": 0,
     "no-shadow-restricted-names": 0,
-    "no-undef": 0,
+    "no-undef": 2,
     "no-undef-init": 0,
     "no-undefined": 0,
-    "no-unused-vars": [2, {"vars": "all", "args": "after-used"}],
+    "no-unused-vars": [1, {"vars": "all", "args": "after-used"}],
     "no-use-before-define": 0,
 
 
@@ -163,7 +163,7 @@
     "eol-last": 0,
     "func-names": 0,
     "func-style": 0,
-    "indent": 0,
+    "indent": [1, 2, {"indentSwitchCase": true}],
     "key-spacing": 0,
     "max-nested-callbacks": 0,
     "new-cap": 0,
@@ -181,7 +181,7 @@
     "no-trailing-spaces": [2, { "skipBlankLines": true }],
     "no-underscore-dangle": 0,
     "no-wrap-func": 0,
-    "one-var": [2, "always"],
+    "one-var": [0, "never"],
     "operator-assignment": 0,
     "padded-blocks": 0,
     "quote-props": 0,

@@ -8,10 +8,16 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "autoprefixer-core": "^5.2.1",
+    "cssnext": "^1.8.1",
     "eslint": "^0.24.1",
     "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-cssnext": "^1.0.1",
     "gulp-eslint": "^0.15.0",
     "gulp-if": "^1.2.5",
+    "gulp-load-plugins": "^0.10.0",
+    "gulp-postcss": "^5.1.9",
     "gulp-print": "^1.1.0",
     "gulp-util": "^3.0.6",
     "yargs": "^3.15.0"
