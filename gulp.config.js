@@ -1,8 +1,8 @@
 module.exports = function () {
-  var client ='./src';
+  var client ='./src/';
   var config = {
     //directories
-    tmp: './.tmp',
+    tmp: './.tmp/',
 
     /**
      * File paths
@@ -10,7 +10,9 @@ module.exports = function () {
 
     alljs: ['*.js'],
 
-    postcss: client + '/css/*.css'
+    sass: client + 'scss/*.scss',
+
+    css4: client + 'css4/*.css'
 
   };
   return config;
