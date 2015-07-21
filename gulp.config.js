@@ -1,19 +1,23 @@
 module.exports = function () {
-  var client ='./src/';
+  var client = './src/client/';
+  var server = './src/server/';
+  var temp = './.tmp/';
+
   var config = {
     //directories
-    tmp: './.tmp/',
+    temp: temp,
 
-    /**
-     * File paths
-     **/
-
+    // file paths
+    client: client,
     alljs: ['*.js'],
-
     sass: client + 'scss/*.scss',
+    css4: client + 'css4/*.css',
+    server: server,
 
-    css4: client + 'css4/*.css'
-
+    // node settings
+    defaultPort: 7203,
+    nodeServer: server + 'app.js'
   };
+
   return config;
 };
