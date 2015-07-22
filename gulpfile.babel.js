@@ -69,6 +69,10 @@ const clean = (path, done) => {
 
 // TASKS
 
+gulp.task('help', $.taskListing);
+
+gulp.task('default', ['help']);
+
 gulp.task('lint', () => {
   log('Analyzing source code with ESLint');
 

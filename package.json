@@ -28,6 +28,7 @@
     "gulp-postcss": "^5.1.10",
     "gulp-print": "^1.1.0",
     "gulp-sass": "^2.0.4",
+    "gulp-task-listing": "^1.0.1",
     "gulp-util": "^3.0.6",
     "morgan": "^1.6.1",
     "serve-favicon": "^2.3.0",
