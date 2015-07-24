@@ -3,6 +3,7 @@ module.exports = () => {
   const server = './src/server/';
   const test = './src/test/';
   const temp = './.tmp/';
+  const src = './src/';
 
   const config = {
     // directories
@@ -14,7 +15,7 @@ module.exports = () => {
     test: test,
     alljs: ['*.js'],
     sass: test + 'scss/*.scss',
-    css4: test + 'css4/*.css',
+    css4: src + 'css4/*.css',
 
     // node settings
     defaultPort: 7203,
