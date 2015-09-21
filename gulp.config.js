@@ -1,25 +1,26 @@
 module.exports = () => {
-  const client = './src/client/';
-  const server = './src/server/';
-  const test = './src/test/';
-  const temp = './.tmp/';
-  const src = './src/';
+  const sourceFolder = './src/';
+  const targetFolder = './target/';
+
+  const stylesFolder = sourceFolder + 'css/';
+
+  const styleFiles = [
+    stylesFolder + 'vendor/normalize.css',
+    stylesFolder + 'vendor/main.css',
+    stylesFolder + 'sass/*.scss',
+  ];
+
+  const finalStyleFile = 'style.css';
 
   const config = {
-    // directories
-    temp: temp,
-
     // file paths
-    client: client,
-    server: server,
-    test: test,
-    alljs: ['*.js'],
-    sass: test + 'scss/*.scss',
-    css4: src + 'css4/*.css',
+    sourceFolder: sourceFolder,
+    targetFolder: targetFolder,
+    stylesFolder: stylesFolder,
 
-    // node settings
-    defaultPort: 7203,
-    nodeServer: server + 'app.js',
+    // files
+    styleFiles: styleFiles,
+    finalStyleFile: finalStyleFile,
   };
 
   return config;

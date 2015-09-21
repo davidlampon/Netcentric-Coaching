@@ -1,0 +1,11 @@
+$font-stack:    Arial, sans-serif;
+$primary-color: #CCC;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+
+p {
+  background-color: orange;
+}
