@@ -8,10 +8,11 @@ const autoprefixer = require('autoprefixer');
 const cssnext = require('cssnext');
 const del = require('del');
 
+const concat = require('gulp-concat');
+const sass = require('gulp-sass');
+
 // configuration file (requiere and execute)
 const config = require('./gulp.config')();
-
-const port = config.defaultPort;
 
 // implicit plugins
 const gulpcssnext = require('gulp-cssnext');
@@ -34,34 +35,6 @@ const log = (msg) => {
   }
 };
 
-const startBrowserSync = () => {
-  if (browserSync.active) {
-    return;
-  }
-
-  log('Starting browser-sync on port ' + port);
-
-  const options = {
-    proxy: 'localhost:' + port,
-    port: 3000,
-    files: [config.client + '**/*.*'],
-    ghostMode: {
-      click: true,
-      location: false,
-      forms: true,
-      scroll: true,
-    },
-    injectChanges: true,
-    logFileChanges: true,
-    logLevel: 'debug',
-    logPrefix: 'gulp-patterns',
-    notify: true,
-    reloadDelay: 1000,
-  };
-
-  browserSync(options);
-};
-
 const clean = (path, done) => {
   log('Cleaning: ' + $.util.colors.blue(path));
   del(path, done);
@@ -73,6 +46,33 @@ gulp.task('help', $.taskListing);
 
 gulp.task('default', ['help']);
 
+gulp.task('clean-styles', (done) => {
+  clean(config.stylesFolder + config.finalStyleFile, done);
+});
+
+gulp.task('styles', ['clean-styles'], () => {
+  log('Compiling Sass --> CSS');
+
+  return gulp
+    .src(config.styleFiles)
+    .pipe($.plumber())
+    .pipe(sass())
+    .pipe(concat(config.finalStyleFile))
+    .pipe($.autoprefixer(['last 2 version', '> 5%']))
+    .pipe(gulp.dest(config.stylesFolder))
+    .pipe(browserSync.stream());
+});
+
+gulp.task('serve', ['styles'], () => {
+  log('Serving web application...');
+
+  browserSync.init({
+    server: './src/',
+  });
+  gulp.watch(config.stylesFolder + '**/*.*', ['styles']);
+  gulp.watch([config.sourceFolder + '**/*.html', config.sourceFolder + '**/*.js']).on('change', browserSync.reload);
+});
+
 gulp.task('lint', () => {
   log('Analyzing source code with ESLint');
 
@@ -83,6 +83,8 @@ gulp.task('lint', () => {
     .pipe($.eslint.format())
     .pipe($.eslint.failOnError());
 });
+
+// POSTCSS TEST TASKS
 
 gulp.task('postcss', () => {
   const processors = [
@@ -116,75 +118,4 @@ gulp.task('lazy-plugins', () => {
     .pipe($.cssnext())
     .pipe($.autoprefixer({browsers: ['last 2 version']}))
     .pipe(gulp.dest(config.temp));
-});
-
-gulp.task('sass', ['clean-styles'], () => {
-  log('Compiling Sass --> CSS');
-
-  return gulp
-    .src(config.sass)
-    .pipe($.plumber())
-    .pipe($.sass())
-    .pipe($.autoprefixer(['last 2 version', '> 5%']))
-    .pipe(gulp.dest(config.temp));
-});
-
-gulp.task('clean-styles', (done) => {
-  const files = config.temp + '**/*.css';
-  clean(files, done);
-});
-
-gulp.task('sass-watcher', () => {
-  gulp.watch([config.sass], ['styles']);
-});
-
-gulp.task('serve-dev', () => {
-  const isDev = true;
-
-  const nodeOptions = {
-    script: config.nodeServer,
-    delayTime: 1,
-    env: {
-      'PORT': port,
-      'NODE_ENV': isDev ? 'dev' : 'build',
-    },
-    watch: [config.server],
-  };
-
-  return $.nodemon(nodeOptions)
-    .on('restart', ['lint'], (ev) => {
-      log('*** nodemon restarted');
-      log('files changed on restart:\n' + ev);
-    })
-    .on('start', () => {
-      log('*** nodemon started');
-      startBrowserSync();
-    })
-    .on('crash', () => {
-      log('*** nodemon crashed: script crashed for some reason');
-    })
-    .on('exit', () => {
-      log('*** nodemon exited cleanly');
-    });
-});
-
-gulp.task('browser-sync', () => {
-  browserSync.init({
-    server: {
-      baseDir: './src/test',
-    },
-    files: ['./**/*.*'],
-    ghostMode: {
-      click: true,
-      location: false,
-      forms: true,
-      scroll: true,
-    },
-    injectChanges: true,
-    logFileChanges: true,
-    logLevel: 'debug',
-    logPrefix: 'gulp-patterns',
-    notify: true,
-    reloadDelay: 1000,
-  });
 });
