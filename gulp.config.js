@@ -12,15 +12,29 @@ module.exports = () => {
 
   const finalStyleFile = 'style.css';
 
+  const jsFolder = sourceFolder + 'js/';
+
+  const jsFiles = [
+    jsFolder + 'vendor/*.js',
+    jsFolder + '*.js',
+  ];
+
+  const finalJSFile = 'main.js';
+
   const config = {
     // file paths
     sourceFolder: sourceFolder,
     targetFolder: targetFolder,
     stylesFolder: stylesFolder,
+    jsFolder : jsFolder,
 
-    // files
+    // style files
     styleFiles: styleFiles,
     finalStyleFile: finalStyleFile,
+
+    // js files
+    jsFiles : jsFiles,
+    finalJSFile : finalJSFile,
   };
 
   return config;
