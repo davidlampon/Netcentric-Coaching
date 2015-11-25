@@ -16,7 +16,7 @@ module.exports = () => {
 
   const jsFiles = [
     jsFolder + 'vendor/*.js',
-    jsFolder + '*.js',
+    jsFolder + 'modules/*.js',
   ];
 
   const finalJSFile = 'main.js';
