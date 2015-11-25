@@ -1,0 +1,87 @@
+// Utilities
+@import "global";
+
+.login {
+
+  &__base {
+    height: 100vh;
+    background-color: $c06;
+    background-image: url("../img/bg.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  &__content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  &__formField {
+    border-bottom: 1px solid $c05;
+    padding: 0 5%;
+  }
+
+  &__formLabel {
+
+    &::before {
+      content: "";
+      display: inline-block;
+      height: 40px;
+      width: 30px;
+      vertical-align: middle;
+
+      .login__formField--username & {
+          background: url("../img/icon/username.png") no-repeat;
+      }
+
+      .login__formField--password & {
+          background: url("../img/icon/password.png") no-repeat;
+      }
+    }
+  }
+
+  &__formInput {
+    background-color: transparent;
+    color: $c02;
+    border: 0;
+    font-size: 22px;
+    padding-top: 30px;
+    padding-bottom: 15px;
+    margin-left: 20px;
+
+    &::placeholder {
+      color: $c02;
+    }
+  }
+
+  &__forgotten {
+    display: block;
+    text-align: right;
+    padding: 0 5%;
+  }
+
+  &__signInButton {
+    font-size: 24px;
+    line-height: 3;
+    text-align: center;
+    color: $c02;
+    background-color: $c04;
+    border: 0;
+    width: 100%;
+    margin-top: 60px;
+
+    &:hover {
+        color: $c01;
+    }
+  }
+
+  &__footer {
+    font-size: 18px;
+    line-height: 3;
+    text-align: center;
+    color: $c03;
+  }
+}
