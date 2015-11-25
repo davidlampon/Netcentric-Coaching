@@ -1,0 +1,46 @@
+// Font type
+
+$f01: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+
+// Font color
+
+$c01 : #000000;
+$c02 : #ffffff;
+$c03 : #cccccc;
+$c04 : #ff3366;
+$c05 : #999999;
+$c06 : #666666;      
+
+// General styles
+
+* {
+  font-family: $f01;
+}
+
+a {
+  text-decoration: none;
+}
+
+.link--black {
+  color: $c01;
+
+  &:hover {
+    color: $c02;
+  }
+}
+
+.link--gray {
+  color: $c03;
+
+  &:hover {
+    color: $c02;
+  }
+}
+
+.link--white {
+  color: $c02;
+
+  &:hover {
+    color: $c03;
+  }
+}

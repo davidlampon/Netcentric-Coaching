@@ -9,6 +9,7 @@ const cssnext = require('cssnext');
 const del = require('del');
 
 const concat = require('gulp-concat');
+const uglify = require('gulp-uglify');
 const sass = require('gulp-sass');
 
 // configuration file (requiere and execute)
@@ -50,6 +51,10 @@ gulp.task('clean-styles', (done) => {
   clean(config.stylesFolder + config.finalStyleFile, done);
 });
 
+gulp.task('clean-js', (done) => {
+  clean(config.jsFolder + config.finalJSFile, done);
+});
+
 gulp.task('styles', ['clean-styles'], () => {
   log('Compiling Sass --> CSS');
 
@@ -63,14 +68,27 @@ gulp.task('styles', ['clean-styles'], () => {
     .pipe(browserSync.stream());
 });
 
+gulp.task('js', ['clean-js'], () => {
+  log('Combining + uglifying');
+
+  return gulp
+    .src(config.jsFiles)
+    .pipe($.plumber())
+    .pipe(concat(config.finalJSFile))
+    .pipe(uglify())
+    .pipe(gulp.dest(config.jsFolder))
+    .pipe(browserSync.stream());
+});
+
 gulp.task('serve', ['styles'], () => {
   log('Serving web application...');
 
   browserSync.init({
     server: './src/',
   });
-  gulp.watch(config.stylesFolder + '**/*.*', ['styles']);
-  gulp.watch([config.sourceFolder + '**/*.html', config.sourceFolder + '**/*.js']).on('change', browserSync.reload);
+  gulp.watch(config.stylesFolder + '**/*.scss', ['styles']);
+  gulp.watch(config.sourceFolder + '**/*.js', ['js']);
+  gulp.watch(config.sourceFolder + '**/*.html').on('change', browserSync.reload);
 });
 
 gulp.task('lint', () => {
