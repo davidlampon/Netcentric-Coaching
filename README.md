@@ -39,6 +39,13 @@ The whole process is divided in three parts:
  Target:
   > Create a todo list application from scratch using the Angular 2 framework, that will be able to do all CRUD actions. This application has to be a SPA and change its views using routing without refreshing the page. It will retrieve all its data using AJAX that is connected to a REST API from a public source. My coach will review that all the topics are correctly implemented and checked as completed.
 
+# External projects:
+
+* [Frontend talk about PostCSS] (https://github.com/davidlampon/Netcentric-Frontend-Talk-Postcss)
+* [Academy syllabus about ES2015 with JS exercises solved using Jasmine] (https://github.com/davidlampon/Netcentric-Academy-ES6)
+* [RequireJS + own MVC system + D3 + Flickr API + Google Maps API] (https://github.com/davidlampon/charts)
+* [Angular2 + Typescript + SystemJS + Routing + D3 + Marvel API] ()
+
 # Blog posts:
 
 * [Coaching project 001] (http://david.lampon.net/2015/07/19/coaching-project-001/): setup and first steps
