@@ -1,7 +1,7 @@
 # coaching
-Coaching process to promote to intermediate engineer at __Netcentric__ conducted by [Erik Grijzen](https://github.com/ErikGrijzen)
+Coaching process at __Netcentric__ conducted by [Erik Grijzen](https://github.com/ErikGrijzen)
 
-This coaching process will allow me to focus on understanding by doing the very foundations of the front-end development process without the limitations of an specific backend system. The final goal is to build from scratch a todo list application using state of the art frameworks and techonolgies with a building process to automate all the steps to get the final release for the production environment. 
+This coaching process will allow me to focus on understanding by doing the very foundations of the front-end development process without the limitations of an specific backend system. The final goal is to build from scratch a frontend application using state of the art frameworks and techonolgies with a building process to automate all the steps to get the final release for the production environment. 
 
 The whole process is divided in three parts:
 
@@ -24,19 +24,17 @@ The whole process is divided in three parts:
   b. How to improve the application build process.
     * Development and production build.
     * CSS pre processor compilation, exploring SASS competitors as [PostCSS] (https://github.com/postcss/postcss) and [LibSass] (http://libsass.org/).
-    * Minification and concatenation.
-    * Icons creation and image compressions. 
-    * Testing with [Jasmine] (http://jasmine.github.io/) and [Karma] (http://karma-runner.github.io/0.12/index.html).
+    * Minification and concatenation. 
+    * Testing with [Jasmine] (http://jasmine.github.io/).
     
   Target:
   > Develop a fast and stable build process which automates the necessary steps to release the application in a production environment. My coach will review that all the topics are correctly implemented and checked as completed.
 
 3. __Improve client application architecture knowledge__
-  * How to create a simple single page MVC todo list application with [Backbone] (http://backbonejs.org/) and [Marionette] (http://marionettejs.com/).
-  * How to manage all the dependencies of the project with [Bower] (http://bower.io/) and [NPM] (https://www.npmjs.com/).
+  * How to create a simple single page MVC todo list application with [Angular 2] (https://angular.io/).
+  * How to manage all the dependencies of the project with [NPM] (https://www.npmjs.com/).
   * How to use routing to change the view.
-  * How to setup a REST service for the SPA to use ([NodeJS] (https://nodejs.org/) + [Express] (http://expressjs.com/) + [MongoDB] (https://www.mongodb.org/)).
-  * How to get the application data via REST (GET, POST, PUT and DELETE).
+  * How to work with public APIs retrieving information in JSON format to present dynamic information.
 
  Target:
-  > Create a todo list application from scratch using the Backbone and Marionette framework, that will be able to do all CRUD actions. This application has to be a SPA and change its views using routing without refreshing the page. It will retrieve all its data using AJAX that is connected to a REST API. A simple backend setup will be created with NodeJS + ExpressJS + MongoDB. My coach will review that all the topics are correctly implemented and checked as completed.
+  > Create a todo list application from scratch using the Angular 2 framework, that will be able to do all CRUD actions. This application has to be a SPA and change its views using routing without refreshing the page. It will retrieve all its data using AJAX that is connected to a REST API from a public source. My coach will review that all the topics are correctly implemented and checked as completed.
