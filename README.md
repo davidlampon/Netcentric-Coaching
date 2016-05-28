@@ -1,4 +1,4 @@
-# coaching
+# Coaching
 Coaching process at __Netcentric__ conducted by [Erik Grijzen](https://github.com/ErikGrijzen)
 
 This coaching process will allow me to focus on understanding by doing the very foundations of the front-end development process without the limitations of an specific backend system. The final goal is to build from scratch a frontend application using state of the art frameworks and techonolgies with a building process to automate all the steps to get the final release for the production environment. 
@@ -38,3 +38,10 @@ The whole process is divided in three parts:
 
  Target:
   > Create a todo list application from scratch using the Angular 2 framework, that will be able to do all CRUD actions. This application has to be a SPA and change its views using routing without refreshing the page. It will retrieve all its data using AJAX that is connected to a REST API from a public source. My coach will review that all the topics are correctly implemented and checked as completed.
+
+# Blog posts:
+
+* [Coaching project 001] (http://david.lampon.net/2015/07/19/coaching-project-001/): setup and first steps
+* [Coaching project 002] (http://david.lampon.net/2015/07/23/coaching-project-002/): gulp development of the frontend build (1)
+* [Coaching project 003] (http://david.lampon.net/2015/09/21/coaching-session-003/): gulp development of the frontend build (2)
+* [Coaching project 004] (http://david.lampon.net/2015/11/23/coaching-session-004/): html5boilerplate analysis
