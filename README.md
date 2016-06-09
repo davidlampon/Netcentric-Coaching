@@ -44,7 +44,7 @@ The whole process is divided in three parts:
 * [Frontend talk about PostCSS] (https://github.com/davidlampon/Netcentric-Frontend-Talk-Postcss)
 * [Academy syllabus about ES2015 with JS exercises solved using Jasmine] (https://github.com/davidlampon/Netcentric-Academy-ES6)
 * [RequireJS + own MVC system + D3 + Flickr API + Google Maps API] (https://github.com/davidlampon/charts)
-* [Angular2 + Typescript + SystemJS + Routing + D3 + Marvel API] ()
+* [Angular2 + Typescript + SystemJS + Routing + D3 + Marvel API] (https://github.com/davidlampon/tour-of-marvel-heroes)
 
 # Blog posts:
 
